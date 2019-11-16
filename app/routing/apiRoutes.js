@@ -8,23 +8,15 @@
 var express = require("express");
 var path = require("path");
 var friends = require("../data/friends.js")
-
-// set up the express app
-var app = express();
-var PORT = process.env.PORT || 3000;
-
-// set up the Express app to handle data parsing
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+var router = express.Router();
 
 // routes === basic route that sends the user first to the AJAX Page
-app.get("/", function (req, res) {
-    res.sendFile(path.join(_dirname, "../public/home.html"));
-});
 
-app.get("/api/friends", function (req, res) {
-    res.sendFile(path.join(_dirname, "../public/survey.html"));
+router.get("/api/friends", function (req, res) {
+    res.json(friends)
 });
-app.post("/api/friends", function (req, res) {
+// router.post("/api/friends", function (req, res) {
 
-})
+// })
+
+module.exports = router

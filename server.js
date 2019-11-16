@@ -4,7 +4,9 @@
 var express = require("express");
 var path = require("path");
 var http = require("http");
-
+var routes = require("./app/routing/htmlRoutes.js")
+var friends = require("./app/data/friends.js")
+console.log(friends)
 // Set up Express App
 var app = express();
 var PORT = process.env.PORT || 3000;
@@ -12,15 +14,10 @@ var PORT = process.env.PORT || 3000;
 //Set up Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use("/", routes)
 
-// Routes == basic route that sends the user first to the AJAX Page
-app.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname, "./app/public/home.html"));
-});
+// Routes == basic route that sends theuser first to the AJAX Page
 
-app.get("/api/friends", function (req, res) {
-    res.sendFile(path.join(__dirname, "./app/public/survey.html"));
-});
 
 app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);

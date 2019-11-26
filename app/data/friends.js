@@ -50,7 +50,7 @@ var friends = [
     {
         "name": "Alice",
         "photo": "https://media.gettyimages.com/photos/portrait-of-a-smiling-young-woman-picture-id905456806?s=612x612",
-        "socres": [
+        "scores": [
             3,
             3,
             3,
@@ -78,6 +78,6 @@ var friends = [
             4,
             5
         ]
-    }
+    },
 ]
 module.exports = friends;

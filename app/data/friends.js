@@ -62,6 +62,22 @@ var friends = [
             2,
             1
         ]
+    },
+    {
+        "name": "Pops",
+        "photo": "https://66.media.tumblr.com/8935e4eefbbd873325e1bcc3ffc53b9d/tumblr_inline_powlw3w87l1s5uhwq_540.jpg",
+        "scores": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            1,
+            2,
+            3,
+            4,
+            5
+        ]
     }
 ]
 module.exports = friends;
